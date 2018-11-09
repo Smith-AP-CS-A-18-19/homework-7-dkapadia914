@@ -4,7 +4,13 @@ public class Homework7 {
 	 * from 1 to x and return the result
 	 */
 	public static int problem1(int x) {
-
+		int sum = 0;
+		int iteration = 1;
+		while (iteration <= x) {
+			sum += iteration;
+			iteration++;
+		}
+		return sum;
 	}
 
 	/* Use a loop (while or for) to find the
@@ -13,8 +19,22 @@ public class Homework7 {
 	 * indexOf method does, but you may not
 	 * use that method, you must use a loop
 	 */
-	public static int problem2(String s, String t) {
-
+	public static int problem2(String s, String t) {;
+		int length = t.length();
+		int start = 0;
+		while (start <= (s.length() - length)) {
+			String test = s.substring(start, length);
+			if (test.equals(t)) {
+				return start;
+			}
+			start++;
+			length++;
+		}
+		String testString = s.substring(start);
+		if (testString.equals(t)) {
+			return start;
+		}
+		return -1;
 	}
 
 	/* Use a loop (while or for) to calculate and
@@ -22,7 +42,13 @@ public class Homework7 {
 	 * power
 	 */
 	public static int problem3(int a, int b) {
-
+		int product = 1;
+		int count = 0;
+		while (count < b) {
+			product *= a;
+			count++;
+		}
+		return product;
 	}
 
 	/* Use a loop (while or for) to calculate and
@@ -30,7 +56,12 @@ public class Homework7 {
 	 * b (i.e., calculate a / b using a loop)
 	 */
 	public static int problem4(int a, int b) {
-
+		int integerPortion = 0;
+		while ((a - b) > 0) {
+			a = a - b;
+			integerPortion++;
+		}
+		return integerPortion;
 	}
 
 	/* Use a loop (while or for) to calculate and
@@ -38,7 +69,10 @@ public class Homework7 {
 	 * (i.e., calculate a % b using a loop)
 	 */
 	 public static int problem5(int a, int b) {
-
+ 		while ((a - b) > 0) {
+ 			a = a - b;
+ 		}
+ 		return a;
 	 }
 
 	public static void main(String[] args) {
@@ -50,12 +84,12 @@ public class Homework7 {
 			System.out.println("Fail 1");
 			exitCode += 1;
 		}
-
 		if (Homework7.problem2("Hello", "llo") == 2 &&
-			Homework7.problem2("Goodbye", "q") == -1) {
-			System.out.println("Pass 2");
+		Homework7.problem2("Goodbye", "q") == -1) {
+		System.out.println("Pass 2");
 		} else {
 			System.out.println("Fail 2");
+			System.out.println(Homework7.problem2("How", "o"));
 			exitCode += 1;
 		}
 
