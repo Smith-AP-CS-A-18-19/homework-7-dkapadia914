@@ -19,6 +19,10 @@ public class Homework7 {
 	 * indexOf method does, but you may not
 	 * use that method, you must use a loop
 	 */
+	/* You should return inside the loop. You are
+	 * returning the index AFTER the beginning of the
+	 * substring
+	 */
 	public static int problem2(String s, String t) {;
 		int length = t.length();
 		int start = 0;
